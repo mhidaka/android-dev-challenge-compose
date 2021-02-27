@@ -86,7 +86,6 @@ fun FeaturedItem(cat: Cat, modifier: Modifier = Modifier) {
     }
 }
 
-
 @Composable
 private fun ContributorsComment(contributor: Contributor) {
     val typography = MaterialTheme.typography

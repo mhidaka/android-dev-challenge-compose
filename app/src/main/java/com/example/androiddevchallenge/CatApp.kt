@@ -15,15 +15,21 @@
  */
 package com.example.androiddevchallenge
 
-import android.os.Bundle
-import androidx.activity.compose.setContent
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.OnBackPressedDispatcher
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import com.example.androiddevchallenge.ui.LocalBackDispatcher
+import com.example.androiddevchallenge.ui.theme.MyTheme
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            CatApp(onBackPressedDispatcher)
+@Composable
+fun CatApp(backDispatcher: OnBackPressedDispatcher) {
+    MyTheme {
+        Surface(color = MaterialTheme.colors.background) {
+            CompositionLocalProvider(LocalBackDispatcher provides backDispatcher) {
+                NavGraph()
+            }
         }
     }
 }
