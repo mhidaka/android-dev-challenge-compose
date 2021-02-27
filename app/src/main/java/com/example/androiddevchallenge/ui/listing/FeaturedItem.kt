@@ -80,14 +80,15 @@ fun FeaturedItem(cat: Cat, modifier: Modifier = Modifier) {
                         .size(45.dp, 45.dp)
                         .clip(RoundedCornerShape(percent = 50))
                 )
-                CntributorsComment(cat.contributor)
+                ContributorsComment(cat.contributor)
             }
         }
     }
 }
 
+
 @Composable
-private fun CntributorsComment(contributor: Contributor) {
+private fun ContributorsComment(contributor: Contributor) {
     val typography = MaterialTheme.typography
     Column() {
         Text(
