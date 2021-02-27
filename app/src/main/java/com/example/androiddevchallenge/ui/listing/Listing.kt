@@ -17,6 +17,7 @@ package com.example.androiddevchallenge.ui.listing
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -33,22 +34,32 @@ import com.example.androiddevchallenge.ui.ItemList
 import kotlinx.coroutines.runBlocking
 
 @Composable
-fun Listing(featuredCat: Cat, cats: List<Cat>) {
+public fun Listing(featuredCat: Cat, cats: List<Cat>) {
 
-    Column() {
-        Text(
-            modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp),
-            text = "Recent cats for you",
-            style = MaterialTheme.typography.subtitle1
-        )
-        FeaturedItem(cat = featuredCat)
-        Text(
-            modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp),
-            text = "Wonderful cute cats",
-            style = MaterialTheme.typography.subtitle1
-        )
-        ItemList(cats = cats)
+    LazyColumn() {
+        item { FeaturedItemTitle() }
+        item { FeaturedItem(cat = featuredCat) }
+        item { ItemListTitle() }
+        item { ItemList(cats = cats) }
     }
+}
+
+@Composable
+fun FeaturedItemTitle() {
+    Text(
+        modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp),
+        text = "Recent cats for you",
+        style = MaterialTheme.typography.subtitle1
+    )
+}
+
+@Composable
+fun ItemListTitle() {
+    Text(
+        modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp),
+        text = "Wonderful cute cats",
+        style = MaterialTheme.typography.subtitle1
+    )
 }
 
 @Preview("Listing screen", widthDp = 360, heightDp = 640)
