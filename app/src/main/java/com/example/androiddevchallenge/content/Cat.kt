@@ -28,6 +28,7 @@ data class Cat(
 
 data class Contributor(
     val name: String,
+    val twitter: String,
     val shortIntroduction: String,
     @DrawableRes val imageId: Int,
 )
