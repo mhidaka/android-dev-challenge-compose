@@ -29,7 +29,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
  * An effect for handling presses of the device back button.
  */
 @Composable
-fun backHandler(
+fun BackHandler(
     enabled: Boolean = true,
     onBack: () -> Unit
 ) {
