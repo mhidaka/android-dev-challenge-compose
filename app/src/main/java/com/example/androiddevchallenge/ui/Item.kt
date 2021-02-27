@@ -26,7 +26,7 @@ import com.example.androiddevchallenge.repository.post1
 import com.example.androiddevchallenge.repository.post3
 
 @Composable
-fun PostImage(cat: Cat, modifier: Modifier = Modifier) {
+private fun PostImage(cat: Cat, modifier: Modifier = Modifier) {
     Image(
         painter = painterResource(cat.imageThumbId),
         contentDescription = null, // decorative
@@ -37,12 +37,12 @@ fun PostImage(cat: Cat, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun PostTitle(cat: Cat) {
+private fun PostTitle(cat: Cat) {
     Text(cat.title, style = MaterialTheme.typography.subtitle1)
 }
 
 @Composable
-fun ContributorWithSelfIntroduction(
+private fun ContributorWithSelfIntroduction(
     contributor: Contributor,
     modifier: Modifier = Modifier
 ) {

@@ -16,7 +16,7 @@ import com.example.androiddevchallenge.repository.Result
 import kotlinx.coroutines.runBlocking
 
 @Composable
-private fun ItemList(
+fun ItemList(
     cats: List<Cat>
 ) {
     Column {
