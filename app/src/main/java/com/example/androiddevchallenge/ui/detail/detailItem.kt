@@ -46,7 +46,7 @@ fun DetailItem(cat: Cat, modifier: Modifier = Modifier) {
             Spacer(Modifier.height(24.dp))
         }
         item {
-            Descriptoin(cat)
+            Description(cat)
         }
         item {
             Spacer(Modifier.height(48.dp))
@@ -76,7 +76,7 @@ private fun Title(cat: Cat) {
 }
 
 @Composable
-private fun Descriptoin(cat: Cat) {
+private fun Description(cat: Cat) {
     Text(text = cat.description, style = MaterialTheme.typography.body1)
     Spacer(Modifier.height(8.dp))
 }
