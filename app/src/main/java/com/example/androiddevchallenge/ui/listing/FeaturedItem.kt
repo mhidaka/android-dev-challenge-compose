@@ -108,7 +108,6 @@ private fun ContributorsComment(contributor: Contributor) {
 fun FeaturedItemPreview() {
     ThemedPreview {
         FeaturedItem(cat = post1) {
-
         }
     }
 }
@@ -118,7 +117,6 @@ fun FeaturedItemPreview() {
 fun FeaturedItemDarkThemePreview() {
     ThemedPreview(darkTheme = true) {
         FeaturedItem(cat = post6) {
-
         }
     }
 }

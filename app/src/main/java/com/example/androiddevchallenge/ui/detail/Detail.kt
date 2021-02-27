@@ -31,7 +31,8 @@ import kotlinx.coroutines.runBlocking
 
 @Composable
 fun Detail(catId: String, onUpPress: () -> Unit) {
-    val cat = remember(catId) { (runBlocking { FakeAdaptionRepository().getPost(catId) } as Result.Success).data }
+    val cat =
+        remember(catId) { (runBlocking { FakeAdaptionRepository().getPost(catId) } as Result.Success).data }
     Detail(cat = cat, onUpPress = onUpPress)
 }
 

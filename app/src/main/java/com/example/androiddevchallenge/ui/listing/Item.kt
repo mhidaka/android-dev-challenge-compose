@@ -94,7 +94,6 @@ fun Item(cat: Cat, onSelected: (String) -> Unit) {
 fun ItemPreview() {
     ThemedPreview {
         Item(post1) {
-
         }
     }
 }
@@ -104,7 +103,6 @@ fun ItemPreview() {
 fun ItemDarkmodePreview() {
     ThemedPreview(darkTheme = true) {
         Item(post3) {
-
         }
     }
 }

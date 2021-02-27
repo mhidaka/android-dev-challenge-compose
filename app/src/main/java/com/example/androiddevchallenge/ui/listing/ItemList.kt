@@ -57,7 +57,6 @@ fun HomePreview() {
     ThemedPreview {
         val cats = runBlocking { FakeAdaptionRepository().getPosts() }
         ItemList((cats as Result.Success).data) {
-
         }
     }
 }
@@ -68,7 +67,6 @@ fun HomeDarkThemePreview() {
     ThemedPreview(darkTheme = true) {
         val cats = runBlocking { FakeAdaptionRepository().getPosts() }
         ItemList((cats as Result.Success).data) {
-
         }
     }
 }
