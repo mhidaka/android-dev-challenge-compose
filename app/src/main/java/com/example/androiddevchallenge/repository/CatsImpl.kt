@@ -74,5 +74,11 @@ val posts: List<Cat> =
         post3,
         post4,
         post5,
+        post6,
+        post1,
+        post2,
+        post3,
+        post4,
+        post5,
         post6
     )
