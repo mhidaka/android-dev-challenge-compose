@@ -32,11 +32,12 @@ import kotlinx.coroutines.runBlocking
 
 @Composable
 fun ItemList(
-    cats: List<Cat>
+    cats: List<Cat>,
+    onSelected: (String) -> Unit
 ) {
     Column {
         cats.forEach { cat ->
-            Item(cat = cat)
+            Item(cat = cat, onSelected = onSelected)
             ListDivider()
         }
     }
@@ -55,7 +56,9 @@ private fun ListDivider() {
 fun HomePreview() {
     ThemedPreview {
         val cats = runBlocking { FakeAdaptionRepository().getPosts() }
-        ItemList((cats as Result.Success).data)
+        ItemList((cats as Result.Success).data) {
+
+        }
     }
 }
 
@@ -64,6 +67,8 @@ fun HomePreview() {
 fun HomeDarkThemePreview() {
     ThemedPreview(darkTheme = true) {
         val cats = runBlocking { FakeAdaptionRepository().getPosts() }
-        ItemList((cats as Result.Success).data)
+        ItemList((cats as Result.Success).data) {
+
+        }
     }
 }

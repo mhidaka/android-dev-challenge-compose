@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui
+package com.example.androiddevchallenge.ui.listing
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -44,12 +45,13 @@ import com.example.androiddevchallenge.repository.post1
 import com.example.androiddevchallenge.repository.post6
 
 @Composable
-fun FeaturedItem(cat: Cat, modifier: Modifier = Modifier) {
+fun FeaturedItem(cat: Cat, onSelected: (String) -> Unit) {
     val typography = MaterialTheme.typography
     Column(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
+            .clickable { onSelected(cat.id) }
     ) {
         val imageModifier = Modifier
             .heightIn(min = 180.dp, max = 180.dp)
@@ -71,11 +73,11 @@ fun FeaturedItem(cat: Cat, modifier: Modifier = Modifier) {
         Spacer(Modifier.height(16.dp))
 
         CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
-            Row() {
+            Row {
                 Image(
                     painter = painterResource(cat.contributor.imageId),
                     contentDescription = null, // decorative
-                    modifier = modifier
+                    modifier = Modifier
                         .padding(end = 16.dp)
                         .size(45.dp, 45.dp)
                         .clip(RoundedCornerShape(percent = 50))
@@ -89,7 +91,7 @@ fun FeaturedItem(cat: Cat, modifier: Modifier = Modifier) {
 @Composable
 private fun ContributorsComment(contributor: Contributor) {
     val typography = MaterialTheme.typography
-    Column() {
+    Column {
         Text(
             text = contributor.shortIntroduction,
             style = typography.body2
@@ -105,7 +107,9 @@ private fun ContributorsComment(contributor: Contributor) {
 @Composable
 fun FeaturedItemPreview() {
     ThemedPreview {
-        FeaturedItem(cat = post1)
+        FeaturedItem(cat = post1) {
+
+        }
     }
 }
 
@@ -113,6 +117,8 @@ fun FeaturedItemPreview() {
 @Composable
 fun FeaturedItemDarkThemePreview() {
     ThemedPreview(darkTheme = true) {
-        FeaturedItem(cat = post6)
+        FeaturedItem(cat = post6) {
+
+        }
     }
 }

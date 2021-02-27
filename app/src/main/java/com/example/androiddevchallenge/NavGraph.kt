@@ -54,7 +54,7 @@ fun NavGraph(startDestination: String = MainDestinations.MAIN_ROUTE) {
         }
         composable(
             "${MainDestinations.CAT_DETAIL_ROUTE}/{$CAT_DETAIL_ID_KEY}",
-            arguments = listOf(navArgument(CAT_DETAIL_ID_KEY) { type = NavType.LongType })
+            arguments = listOf(navArgument(CAT_DETAIL_ID_KEY) { type = NavType.StringType })
         ) { backStackEntry ->
             val arguments = requireNotNull(backStackEntry.arguments)
             val catId = arguments.getString(CAT_DETAIL_ID_KEY, "")

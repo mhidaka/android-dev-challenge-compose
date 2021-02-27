@@ -16,6 +16,7 @@
 package com.example.androiddevchallenge
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -74,9 +75,11 @@ private fun ContributorWithSelfIntroduction(
 }
 
 @Composable
-fun Item(cat: Cat) {
+fun Item(cat: Cat, onSelected: (String) -> Unit) {
     Row(
-        modifier = Modifier.padding(16.dp)
+        modifier = Modifier
+            .padding(16.dp)
+            .clickable { onSelected(cat.id) }
     ) {
         PostImage(cat, Modifier.padding(end = 16.dp))
         Column(modifier = Modifier.weight(1f)) {
@@ -90,7 +93,9 @@ fun Item(cat: Cat) {
 @Composable
 fun ItemPreview() {
     ThemedPreview {
-        Item(post1)
+        Item(post1) {
+
+        }
     }
 }
 
@@ -98,6 +103,8 @@ fun ItemPreview() {
 @Composable
 fun ItemDarkmodePreview() {
     ThemedPreview(darkTheme = true) {
-        Item(post3)
+        Item(post3) {
+
+        }
     }
 }

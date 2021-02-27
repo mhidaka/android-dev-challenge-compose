@@ -34,7 +34,6 @@ import com.example.androiddevchallenge.content.Cat
 import com.example.androiddevchallenge.repository.FakeAdaptionRepository
 import com.example.androiddevchallenge.repository.Result
 import com.example.androiddevchallenge.repository.post1
-import com.example.androiddevchallenge.ui.FeaturedItem
 import com.example.androiddevchallenge.ui.ItemList
 import kotlinx.coroutines.runBlocking
 
@@ -54,17 +53,17 @@ fun Listing(featuredCat: Cat, cats: List<Cat>, onSelected: (String) -> Unit) {
             )
         }
     ) {
-        ListingContent(featuredCat, cats)
+        ListingContent(featuredCat, cats, onSelected)
     }
 }
 
 @Composable
-private fun ListingContent(featuredCat: Cat, cats: List<Cat>) {
+private fun ListingContent(featuredCat: Cat, cats: List<Cat>, onSelected: (String) -> Unit) {
     LazyColumn {
         item { FeaturedItemTitle() }
-        item { FeaturedItem(cat = featuredCat) }
+        item { FeaturedItem(cat = featuredCat, onSelected) }
         item { ItemListTitle() }
-        item { ItemList(cats = cats) }
+        item { ItemList(cats = cats, onSelected = onSelected) }
     }
 }
 
