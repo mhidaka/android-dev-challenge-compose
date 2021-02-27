@@ -6,7 +6,7 @@
 
 
 ## :scroll: Description
-It's an 😺cat adoption app with Jetpack Compose. 
+It's a 😺cat adoption app with Jetpack Compose. 
 
 this app contain 2 screen that displays a list of cats and a detail screen showing each cat's details. 
 
