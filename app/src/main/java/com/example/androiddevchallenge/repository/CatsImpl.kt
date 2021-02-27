@@ -1,9 +1,23 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge.repository
 
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.content.Cat
 import com.example.androiddevchallenge.content.Contributor
-
 
 val yanzm = Contributor("yanzm", "https://twitter.com/yanzm", "心の友", R.drawable.icon1)
 val mhidaka = Contributor("mhidaka", "https://twitter.com/mhidaka", "ひつじ牧場のほうから来ました", R.drawable.icon2)
@@ -47,7 +61,6 @@ val post4 = Cat(
     imageId = R.drawable.cat4,
     imageThumbId = R.drawable.cat4_thumbnail
 )
-
 
 val post5 = Cat(
     id = "13745e90-450e-44f7-b69a-f6fd9127e312",
