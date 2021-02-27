@@ -122,7 +122,7 @@ private fun ContributorsComment(contributor: Contributor) {
             style = typography.body2
         )
         Text(
-            text = "${contributor.name} - Loving cats",
+            text = "${contributor.name} - Cat-loving person",
             style = typography.body2
         )
     }
